@@ -9,7 +9,7 @@ export default function App() {
 <Weather />
       <footer>
       This project was coded by Nic Alonso, opened sourced on {""}
-      <a href='https://github.com/Lonz8576' target='_blank'>GitHub</a>
+      <a href='https://github.com/Lonz8576' >GitHub</a>
       </footer>
       </div>
 
