@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Acme&family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&display=swap');
 *{
     margin:0;
     padding: 0;
@@ -7,9 +8,20 @@
     font-family: "Acme", sans-serif;
     font-size: 14px;
 }
-.container{
-    width: 100%;
-    height: 100vh;
+@media (max-width:420px){
+  .box-column, .day-one, .day-three, .day-two, .forecast-box{
+   display:none;
+   width:0;
+   margin:0;
+   row-gap: 0;
+}
+.container-sm{
+  position: block;
+  justify-content: right;
+  margin:0 auto;
+}
+}
+.container-sm{
     background-image:#fdb44b;
     display: flex;
     justify-content: center;
@@ -17,10 +29,11 @@
 }
 .weather-app{
      background:  linear-gradient(10.6deg, rgb(5, 69, 77) 1.2%, rgb(186, 232, 232) 91.1%);
-
-     min-width:fit-content;
-     max-width: 35rem;
-     max-height: 120vh;
+     margin-right: .5em;
+     margin-top: 2em;
+     margin-bottom:.5em;
+     padding-bottom: 2em;
+     max-height: 100vh;
      padding: 2em;
      box-shadow: -2px 18px 24px 6px rgba(0, 0, 0, 0.7);
      border-radius: 2em;
@@ -29,8 +42,6 @@
     }
 .forecast-box{
     display: grid;
-    margin-left: 20px;
-
 }
 .box-column{
      display: grid;
@@ -76,27 +87,29 @@
     margin-right: 1.5em;
 }
 .search-bar input::placeholder{
-    color:antiquewhite;
+    color:#212b32;
     font-family: 'Bitter', serif;
     font-size: 12px;
+    font-weight:400;
 }
 .search-bar input:focus::placeholder{
     color:transparent;
+    background-color: rgba(250, 235, 215, 0.349);
 }
-.search-bar i{
+.btn{
     position: absolute;
     transform: translateY(-50%);
-    right: .5rem;
-    top: 50%;
-    color: antiquewhite;
+    right: .5px;
+    top: 45%;
+
 }
 input{
     text-align: left;
     margin: .25em;
-    background-color: #212b327c;
+    background-color: #e3e5e67a;
     border-radius: 0.3em;
     padding: 3px;
-    border: 1.5px solid rgb(33, 43, 50);
+    border: 1px solid rgb(33, 43, 50);
 }
 img{
     width: 150px;
@@ -104,9 +117,14 @@ img{
 .temp{
     font-size: 54px;
     color: rgb(17, 16, 16);
-    font-family:system-ui, -apple-system, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family:"Wix Madefor Display", sans-serif;
     font-weight: 600;
     padding-bottom:.2em;
+}
+.unit{
+    font-size: 1.7rem;
+    position: relative;
+    top: -12px;
 }
 .date{
     margin-bottom: 2em;
@@ -132,11 +150,11 @@ img{
 
 }
 .humidity, .wind{
-    background: rgba(225, 225, 226, 0.372);
+    background: rgba(160, 208, 209, 0.788);
     border-radius: 15px;
     color: rgb(17, 16, 16);
     border:2px ridge rgb(33, 43, 50);
-    padding:5px;
+    padding:6px;
 }
 
 .weather-details i{

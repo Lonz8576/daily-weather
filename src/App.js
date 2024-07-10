@@ -1,6 +1,7 @@
 
 import Weather from './WeatherDaily.js';
 import './index.css';
+import axios from 'axios';
 
 export default function App() {
   return (
