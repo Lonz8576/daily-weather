@@ -7,7 +7,7 @@ export default function App() {
   return (
     <div>
 
-<Weather />
+<Weather defaultCity = "Saint Petersburg" />
       <footer>
       This project was coded by Nic Alonso, opened sourced on {""}
       <a href='https://github.com/Lonz8576' >GitHub</a>

@@ -28,7 +28,7 @@
     align-items: center;
 }
 .weather-app{
-     background:  linear-gradient(10.6deg, rgb(5, 69, 77) 1.2%, rgb(186, 232, 232) 91.1%);
+    background: radial-gradient(circle at 50% 10%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 95.2%);
      margin-right: .5em;
      margin-top: 2em;
      margin-bottom:.5em;

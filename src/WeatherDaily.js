@@ -1,27 +1,27 @@
 import React, { useState } from "react";
-import sunny from './images/sun.png'
 import Forecast from "./ForecastDays";
 import axios from 'axios';
 
 
-export default function Weather() {
-  const [load, setLoad] = useState(false);
-  const [weatherData, setWeatherData] = useState({});
+export default function Weather(props) {
+  const [weatherData, setWeatherData] = useState({load : false});
   function handleResponse(response) {
     setWeatherData({
+      load: true,
       temperature: response.data.temperature.current,
       wind: response.data.wind.speed,
       city: response.data.city,
       humidity: response.data.temperature.humidity,
       description: response.data.condition.description,
-      icon: response.data.condition.icon_url
+      icon: response.data.condition.icon_url,
+      date: "Friday July 30, 2024"
 
 
     });
       
-      setLoad(true);
+      
   }
-  if (load) {
+  if (weatherData.load) {
 
     return (
       <div className="App">
@@ -41,9 +41,9 @@ export default function Weather() {
                   </div>
                   <div className='temp'>{Math.round(weatherData.temperature)} <span className="unit">°C</span></div>
       
-                  <div className='weather-description'>{weatherData.description} </div>
+                  <div className='text-capitalize weather-description'>{weatherData.description} </div>
       
-                <div className='date'>Friday July 30, 2024</div>
+                <div className='date'>{weatherData.date}</div>
                   <div className='weather-details'>
                       <div className='humidity'>Humidity
                         <div>
@@ -66,12 +66,17 @@ export default function Weather() {
   } else {
 
     const apiKey = "2e99ddt6a7e37f7c164ob09d070ab380";
-    let city = "London";
-    const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+    const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&units=metric`;
     
     axios.get(apiUrl).then(handleResponse);
 
-      return "Loading....";
+      return (
+        <div class="d-flex justify-content-center text-warning">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      );
 
   }
    
