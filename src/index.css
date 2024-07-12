@@ -1,12 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Acme&family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap');
+
 *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Acme", sans-serif;
-    font-size: 14px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
 }
 @media (max-width:420px){
   .box-column, .day-one, .day-three, .day-two, .forecast-box{
@@ -15,29 +16,25 @@
    margin:0;
    row-gap: 0;
 }
-.container-sm{
-  position: block;
-  justify-content: right;
+.container-md{
   margin:0 auto;
 }
 }
-.container-sm{
-    background-image:#fdb44b;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container-md{
+    background-image:rgb(88, 88, 86);
+    align-content: center;
 }
 .weather-app{
     background: radial-gradient(circle at 50% 10%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 95.2%);
-     margin-right: .5em;
-     margin-top: 2em;
+     margin-top: .25em;
      margin-bottom:.5em;
-     padding-bottom: 2em;
-     max-height: 100vh;
+     margin-left:8em;
+     margin-right:8em;
+     max-height: 160vh;
      padding: 2em;
      box-shadow: -2px 18px 24px 6px rgba(0, 0, 0, 0.7);
-     border-radius: 2em;
-     border: 2px groove rgba(33, 43, 50, 0.527);
+     border-radius: 1rem;
+     border: 2px ridge rgba(207, 224, 55, 0.692);
      text-align: center;
     }
 .forecast-box{
@@ -63,9 +60,9 @@
 .local{
     padding-left: 5px;
     letter-spacing: .5px;
-    font-family: "Bitter", serif;
-    font-size: 14px;
-    font-weight: 600;
+    font-family: "DM Serif Display", serif;
+    font-weight: 300;
+    color:rgba(240, 241, 238, 0.966);
 
  }
 .search-up{
@@ -77,7 +74,7 @@
     justify-content: center;
 }
 .search-up i{
-    color: #212b32;
+    color:rgba(240, 241, 238, 0.966);
 }
 .search-bar{
     display:block;
@@ -88,7 +85,7 @@
 }
 .search-bar input::placeholder{
     color:#212b32;
-    font-family: 'Bitter', serif;
+    font-family: 'Dm Sans', serif;
     font-size: 12px;
     font-weight:400;
 }
@@ -117,7 +114,7 @@ img{
 .temp{
     font-size: 54px;
     color: rgb(17, 16, 16);
-    font-family:"Wix Madefor Display", sans-serif;
+    font-family:"DM Serif Display", sans-serif;
     font-weight: 600;
     padding-bottom:.2em;
 }
@@ -135,7 +132,7 @@ img{
 }
 .weather-description{
     font-size: 24px;
-    font-family: "Bitter", serif;
+    font-family: "Dm Sans", serif;
     font-weight: 500;
     color: rgb(17, 16, 16);
     margin-bottom: .5em;
@@ -144,7 +141,7 @@ img{
     display:grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1 1;
-    font-family: "Bitter", serif;
+    font-family: "Dam Sans", serif;
     font-size: 18px;
     column-gap: 20px;
 
@@ -163,6 +160,7 @@ img{
     }
 footer{
   text-align: center;
+  font-family:"DM Serif Display", sans-serif;
   letter-spacing: .5px;
     }
 footer a{

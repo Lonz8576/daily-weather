@@ -25,15 +25,15 @@ export default function Weather(props) {
 
     return (
       <div className="App">
-            <div className='container-sm'>
-              <div className='weather-app'>
+            <div className='container-md'>
+              <div className='container-sm weather-app'>
                    <div className='search-up'>
                     <i className='fa-solid fa-location-dot'></i>
                           <div className='local'>{weatherData.city}</div>
                           </div>
                           <div className='search-bar'>
                             <input type='search' placeholder='Enter a location...' />
-                       <button type="submit" className="btn" value="search"><i className='fa-solid fa-magnifying-glass'></i></button>
+                       <button type="submit" className="btn" value="search"><i className='fa-solid fa-magnifying-glass text-light text-opacity-75'></i></button>
                           </div>
       
                   <div className='weather-icon'>
@@ -55,7 +55,7 @@ export default function Weather(props) {
                   </div>
       
               </div>
-      <Forecast />
+     
       
           </div>
               </div>

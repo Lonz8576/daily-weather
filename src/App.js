@@ -9,8 +9,10 @@ export default function App() {
 
 <Weather defaultCity = "Saint Petersburg" />
       <footer>
-      This project was coded by Nic Alonso, opened sourced on {""}
+      This project was coded by {""} <a href='https://nic-alonso-dev.netlify.app' >Nic Alonso</a>, opened sourced on {""}
+      
       <a href='https://github.com/Lonz8576' >GitHub</a>
+      
       </footer>
       </div>
 
