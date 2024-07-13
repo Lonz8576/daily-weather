@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Forecast from "./ForecastDays";
 import axios from 'axios';
+import MainDate from "./MainDate";
 
 
 export default function Weather(props) {
@@ -16,7 +17,7 @@ export default function Weather(props) {
       feels: response.data.temperature.feels_like,
       description: response.data.condition.description,
       icon: response.data.condition.icon_url,
-      date: "Friday July 30, 2024"
+      date:new Date(response.data.time * 1000)
 
 
     });
@@ -41,11 +42,11 @@ export default function Weather(props) {
                   <div className='weather-icon'>
                     <img src={weatherData.icon} alt='sunny' />
                   </div>
-                  <div className='temp'>{Math.round(weatherData.temperature)} <span className="unit">°C</span></div>
+                  <div className='temp'>{Math.round(weatherData.temperature)} <span className="unit">°F</span></div>
       
                   <div className='text-capitalize weather-description'>{weatherData.description} </div>
       
-                <div className='date'>{weatherData.date}</div>
+                <div className='date'><MainDate date={weatherData.date} /></div>
 
                   <div className='weather-details container-fluid py-1'>
                       <div className='humidity py-2'>Humidity
@@ -57,7 +58,7 @@ export default function Weather(props) {
                     {Math.round(weatherData.wind)}<span> km/h</span></div></div>
                       <div className='wind py-2'>Feels like
                         <div className="daily-details">
-                      {Math.round(weatherData.feels)}<span> °C</span></div></div>
+                      {Math.round(weatherData.feels)}<span> °F</span></div></div>
                       <div className='wind py-2'>Pressure
                         <div className="daily-details">
                       {Math.round(weatherData.pressure)}<span> Hg</span></div></div>
@@ -76,7 +77,7 @@ export default function Weather(props) {
   } else {
 
     const apiKey = "2e99ddt6a7e37f7c164ob09d070ab380";
-    const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&units=metric`;
+    const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&units=imperial`;
     
     axios.get(apiUrl).then(handleResponse);
 
