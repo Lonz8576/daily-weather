@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Forecast from "./ForecastDays";
 import axios from 'axios';
-import MainDate from "./MainDate";
+
+import MainWeather from "./MainWeather";
 
 
 export default function Weather(props) {
@@ -38,31 +39,8 @@ export default function Weather(props) {
                             <input className="position-absolute top-10 start-50 translate-middle" type='search' placeholder='Enter a location...' />
                        <button type="submit" className="btn" value="search"><i className='fa-solid fa-magnifying-glass text-dark text-opacity-90'></i></button>
                           </div>
-      
-                  <div className='weather-icon'>
-                    <img src={weatherData.icon} alt='sunny' />
-                  </div>
-                  <div className='temp'>{Math.round(weatherData.temperature)} <span className="unit">°F</span></div>
-      
-                  <div className='text-capitalize weather-description'>{weatherData.description} </div>
-      
-                <div className='date'><MainDate date={weatherData.date} /></div>
-
-                  <div className='weather-details container-fluid py-1'>
-                      <div className='humidity py-2'>Humidity
-                        <div className="daily-details">
-                    {weatherData.humidity}<span> %</span></div></div>
-      
-                      <div className='wind py-2'>Wind
-                        <div className="daily-details fs-6">
-                    {Math.round(weatherData.wind)}<span> km/h</span></div></div>
-                      <div className='wind py-2'>Feels like
-                        <div className="daily-details">
-                      {Math.round(weatherData.feels)}<span> °F</span></div></div>
-                      <div className='wind py-2'>Pressure
-                        <div className="daily-details">
-                      {Math.round(weatherData.pressure)}<span> Hg</span></div></div>
-                  </div>
+                        <MainWeather info={weatherData} />
+                  
           <Forecast />
           
               </div>
