@@ -7,7 +7,7 @@ export default function App() {
   return (
     <div>
 
-<Weather defaultCity = "Saint Petersburg" />
+<Weather defaultCity = "Greenville" />
       <footer>
       This project was coded by {""} <a href='https://nic-alonso-dev.netlify.app' >Nic Alonso</a>, opened sourced on {""}
       
