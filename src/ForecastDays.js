@@ -6,12 +6,54 @@ import axios from 'axios';
 export default function Forecast() {
   return (
  <div className='forecast-box'>
-        <div className='box-column'>
-        <div className='day-one'>day one forecast</div>
-            <div className='day-two'>day 2 forecast</div>
-            <div className='day-three'>day 3</div>
+    <div className='next d-flex justify-content-start'>Next 5 days</div>
+        <div className='box-rows row row-cols-2'>
+        <div className='day-one col'>
+          day one forecast
+        <div className='col'>Date</div>
+          </div>
+          <div className='row d-flex justify-content-end temp-forecast'>
+            Temp
+          </div>
+          </div>
+          <div className='box-rows row row-cols-2'>
+            <div className='day-two'>
+              day 2 forecast
+              <div className='col'>Date</div>
+          </div>
+          <div className='row d-flex justify-content-end temp-forecast'>
+            Temp
+          </div>
+              </div>
+              <div className='box-rows row row-cols-2'>
+            <div className='day-two'>
+              day 2 forecast
+              <div className='col'>Date</div>
+          </div>
+          <div className='row d-flex justify-content-end temp-forecast'>
+            Temp
+          </div>
+              </div>
+              <div className='box-rows row row-cols-2'>
+            <div className='day-two'>
+              day 2 forecast
+              <div className='col'>Date</div>
+          </div>
+          <div className='row d-flex justify-content-end temp-forecast'>
+            Temp
+          </div>
+              </div>
+              <div className='box-rows row row-cols-2'>
+            <div className='day-three'>
+              day 3
+              <div className='col'>Date</div>
+          </div>
+          <div className='row d-flex justify-content-end temp-forecast'>
+            Temp
+          </div>
+              </div>
         </div>
-        </div>
+      
 
 )
 }

@@ -26,14 +26,14 @@ export default function Weather(props) {
     return (
       <div className="App">
             <div className='container-md'>
-              <div className='container-sm weather-app'>
+              <div className='container-sm weather-app mt-2'>
                    <div className='search-up'>
                     <i className='fa-solid fa-location-dot'></i>
                           <div className='local'>{weatherData.city}</div>
                           </div>
-                          <div className='search-bar'>
-                            <input type='search' placeholder='Enter a location...' />
-                       <button type="submit" className="btn" value="search"><i className='fa-solid fa-magnifying-glass text-light text-opacity-75'></i></button>
+                          <div className='search-bar mt-3 pt-2'>
+                            <input className="position-absolute top-10 start-50 translate-middle" type='search' placeholder='Enter a location...' />
+                       <button type="submit" className="btn" value="search"><i className='fa-solid fa-magnifying-glass text-dark text-opacity-90'></i></button>
                           </div>
       
                   <div className='weather-icon'>
@@ -44,16 +44,23 @@ export default function Weather(props) {
                   <div className='text-capitalize weather-description'>{weatherData.description} </div>
       
                 <div className='date'>{weatherData.date}</div>
-                  <div className='weather-details'>
-                      <div className='humidity'>Humidity
-                        <div>
-                    <i className='fa-solid fa-droplet'>{weatherData.humidity} <span>%</span> </i></div></div>
+
+                  <div className='weather-details mx-5 py-1'>
+                      <div className='humidity py-2'>Humidity
+                        <div className="daily-details">
+                    {weatherData.humidity}<span> %</span></div></div>
       
-                      <div className='wind'>Wind
-                        <div>
-                      <i className='fa-solid fa-wind'>{Math.round(weatherData.wind)} <span>km/h</span> </i></div></div>
+                      <div className='wind py-2'>Wind
+                        <div className="daily-details">
+                    {Math.round(weatherData.wind)}<span> km/h</span></div></div>
+                      <div className='wind py-2'>Wind
+                        <div className="daily-details">
+                      {Math.round(weatherData.wind)}<span> km/h</span></div></div>
+                      <div className='wind py-2'>Wind
+                        <div className="daily-details">
+                      {Math.round(weatherData.wind)}<span> km/h</span></div></div>
                   </div>
-      
+          <Forecast />
               </div>
      
       
