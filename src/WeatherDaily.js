@@ -12,6 +12,8 @@ export default function Weather(props) {
       wind: response.data.wind.speed,
       city: response.data.city,
       humidity: response.data.temperature.humidity,
+      pressure: response.data.temperature.pressure,
+      feels: response.data.temperature.feels_like,
       description: response.data.condition.description,
       icon: response.data.condition.icon_url,
       date: "Friday July 30, 2024"
@@ -45,20 +47,20 @@ export default function Weather(props) {
       
                 <div className='date'>{weatherData.date}</div>
 
-                  <div className='weather-details mx-5 py-1'>
+                  <div className='weather-details container-fluid py-1'>
                       <div className='humidity py-2'>Humidity
                         <div className="daily-details">
                     {weatherData.humidity}<span> %</span></div></div>
       
                       <div className='wind py-2'>Wind
-                        <div className="daily-details">
+                        <div className="daily-details fs-6">
                     {Math.round(weatherData.wind)}<span> km/h</span></div></div>
-                      <div className='wind py-2'>Wind
+                      <div className='wind py-2'>Feels like
                         <div className="daily-details">
-                      {Math.round(weatherData.wind)}<span> km/h</span></div></div>
-                      <div className='wind py-2'>Wind
+                      {Math.round(weatherData.feels)}<span> °C</span></div></div>
+                      <div className='wind py-2'>Pressure
                         <div className="daily-details">
-                      {Math.round(weatherData.wind)}<span> km/h</span></div></div>
+                      {Math.round(weatherData.pressure)}<span> Hg</span></div></div>
                   </div>
           <Forecast />
           
@@ -79,7 +81,7 @@ export default function Weather(props) {
     axios.get(apiUrl).then(handleResponse);
 
       return (
-        <div class="d-flex justify-content-center text-warning">
+        <div class="d-flex justify-content-center text-warning m-5">
           <div class="spinner-border" role="status">
             <span class="visually-hidden">Loading...</span>
           </div>
