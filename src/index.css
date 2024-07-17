@@ -114,10 +114,10 @@ input{
     padding: 6px;
     border: 1px inset rgba(24, 25, 26, 0.7);
 }
-img{
-    width: 200px;
-    position: relative;
-    top:-30px;
+.weather-icon{
+    display: block;
+    margin-bottom: 20px;  
+    
 }
 .temp{
     font-size: 54px;
@@ -125,8 +125,7 @@ img{
     font-family:"DM Serif Display", sans-serif;
     font-weight: 500;
     position: relative;
-    top:-30px;
-    line-height: 10px;
+    line-height: 20px;
     padding-bottom:.2em;
 }
 .unit{

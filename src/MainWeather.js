@@ -1,5 +1,6 @@
 import React from "react";
 import MainDate from "./MainDate";
+import WeatherIcon from "./WeatherIcon";
 
 
 
@@ -9,7 +10,7 @@ export default function MainWeather(props) {
 
       <div className="MainWeather">
         <div className='weather-icon'>
-                    <img src={props.info.icon} alt='' />
+        <WeatherIcon state={props.info.icon} />
                   </div>
                   <div className='temp'>{Math.round(props.info.temperature)} <span className="unit">°F</span></div>
       
