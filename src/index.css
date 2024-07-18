@@ -114,9 +114,10 @@ input{
     padding: 6px;
     border: 1px inset rgba(24, 25, 26, 0.7);
 }
-.weather-icon{
-    display: block;
+.weather-icon svg{
+
     margin-bottom: 20px;  
+    
     
 }
 .temp{

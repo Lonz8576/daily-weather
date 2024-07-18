@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Forecast from "./ForecastDays";
 import axios from 'axios';
+import WeatherIcon from "./WeatherIcon";
 
 import MainWeather from "./MainWeather";
 
@@ -18,7 +19,7 @@ export default function Weather(props) {
       pressure: response.data.temperature.pressure,
       feels: response.data.temperature.feels_like,
       description: response.data.condition.description,
-      icon: response.data.condition.icon[0].icon_url,
+      icons: response.data.condition.icon[0],
       date:new Date(response.data.time * 1000)
     });   
       
@@ -53,7 +54,7 @@ export default function Weather(props) {
                     <i className='fa-solid fa-location-dot'></i>
                           <div className='local'>{city}</div>
                           </div>
-                          <form className='search-bar mt-3 pt-2' onSubmit={handleSubmit}>
+                          <form className='search-bar mt-3 pt-2' onSubmit={handleSubmit} id="search-form">
                             <input className="position-absolute top-10 start-50 translate-middle" type='search' placeholder='Enter a location...' autoFocus="on" onChange={handleCityChange} />
 
 
@@ -77,9 +78,9 @@ export default function Weather(props) {
       search();
 
       return (
-        <div class="d-flex justify-content-center text-warning m-5">
-          <div class="spinner-border" role="status">
-            <span class="visually-hidden">Loading...</span>
+        <div className="d-flex justify-content-center text-warning m-5">
+          <div className="spinner-border" role="status">
+            <span className="visually-hidden">Loading...</span>
           </div>
         </div>
       );

@@ -10,7 +10,7 @@ export default function MainWeather(props) {
 
       <div className="MainWeather">
         <div className='weather-icon'>
-        <WeatherIcon state={props.info.icon} />
+        <WeatherIcon svg={props.info.icons} />
                   </div>
                   <div className='temp'>{Math.round(props.info.temperature)} <span className="unit">°F</span></div>
       
