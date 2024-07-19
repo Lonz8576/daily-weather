@@ -1,7 +1,7 @@
 import React from "react";
 import MainDate from "./MainDate";
 import WeatherIcon from "./WeatherIcon";
-
+import WeatherTemp from "./WeatherTemp";
 
 
 
@@ -12,7 +12,8 @@ export default function MainWeather(props) {
         <div className='weather-icon'>
         <WeatherIcon svg={props.info.icons} />
                   </div>
-                  <div className='temp'>{Math.round(props.info.temperature)} <span className="unit">°F</span></div>
+                  <WeatherTemp fahrenheit={Math.round(props.info.temperature)} />
+                   
       
                   <div className='text-capitalize weather-description'>{props.info.description} </div>
       
