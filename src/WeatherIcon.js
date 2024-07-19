@@ -1,4 +1,4 @@
-import React, { useState }  from "react";
+import React from "react";
 import { WeatherSvg } from "weather-icons-animated";
 
 export default function WeatherIcon(props){
