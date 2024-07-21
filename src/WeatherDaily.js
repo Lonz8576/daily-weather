@@ -17,7 +17,7 @@ export default function Weather(props) {
       pressure: response.data.temperature.pressure,
       feels: response.data.temperature.feels_like,
       description: response.data.condition.description,
-      icons: response.data.condition.icon[0],
+      icons: response.data.condition.icon,
       date:new Date(response.data.time * 1000)
     });   
       
