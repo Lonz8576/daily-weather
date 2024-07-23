@@ -51,10 +51,14 @@
     border-radius: 3px;
     }
 .forecast-date{
-    font-size: 12px;
+    font-size: 18px;
     font-family: "DM Sans", sans-serif;
     color:rgba(240, 241, 238, 0.8);
 
+}
+.month{
+    font-size: 12px;
+    
 }
  .next{
     color:rgba(240, 241, 238); 

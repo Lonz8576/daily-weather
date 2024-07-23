@@ -1,55 +1,38 @@
 import React from "react";
+import WeatherIcon from "./WeatherIcon";
+
 
 
 
 export default function ForecastData(props) {
+function maxTemp(){
+    let dayMaxTemp = Math.round(props.futureData.temperature.day);
+    return `${dayMaxTemp}°`;
+}
+    
+  
+  function dailyDate() {
+    let date = new Date(props.futureData.time);
+    let dailyDate = date.getDay();
+    let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+        return days[dailyDate];
+  }
+
         return (
-            <div forecastData>
+            <div forecastsection>
             <div className='box-rows row row-cols-2'>
           <div className='day-one col'>
-            Tuesday
-          <div className='col forecast-date'>{props.futureData[0].time}  <span>July</span></div>
-            </div>
-            <div className='row d-flex justify-content-end temp-forecast'>
-              {props.futureData[0].temperature.maximum}°
-            </div>
-            </div>
-            <div className='box-rows row row-cols-2'>
-              <div className='day-two'>
-                Wednesday
-                <div className='col forecast-date'>24  <span>July</span></div>
-            </div>
-            <div className='row d-flex justify-content-end temp-forecast'>
-            {props.futureData[1].temperature.maximum}°
-            </div>
-            </div>
-            <div className='box-rows row row-cols-2'>
-              <div className='day-two'>
-                Thursday
-                <div className='col forecast-date'>25  <span>July</span></div>
-            </div>
-            <div className='row d-flex justify-content-end temp-forecast'>
-            {props.futureData[2].temperature.maximum}°
-            </div>
+            
+          <div className='col forecast-date'>{dailyDate()} 
+             <WeatherIcon icons={props.info.icons}  size={25} />
                 </div>
-                <div className='box-rows row row-cols-2'>
-              <div className='day-two'>
-                Friday
-                <div className='col forecast-date'>26  <span>July</span></div>
             </div>
             <div className='row d-flex justify-content-end temp-forecast'>
-            {props.futureData[3].temperature.maximum}°
+              {maxTemp()}
             </div>
-                </div>
-                <div className='box-rows row row-cols-2'>
-              <div className='day-three'>
-                Saturday
-                <div className='col forecast-date'>27  <span>July</span></div>
             </div>
-            <div className='row d-flex justify-content-end temp-forecast'>
-            {props.futureData[4].temperature.maximum}°
-            </div>
-                </div>
+           
                 
           </div>
             
