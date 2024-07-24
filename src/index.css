@@ -49,16 +49,17 @@
     background: rgb(21, 21, 34, .8);  
     align-content: center;
     border-radius: 3px;
+    padding: 5px;
     }
 .forecast-date{
     font-size: 18px;
     font-family: "DM Sans", sans-serif;
-    color:rgba(240, 241, 238, 0.8);
+    color:rgba(240, 241, 238);
 
 }
-.month{
-    font-size: 12px;
-    
+.forecast-description{
+    font-size: 14px;
+    color:rgba(240, 241, 238, 0.6);    
 }
  .next{
     color:rgba(240, 241, 238); 
