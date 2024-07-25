@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ForecastData from './ForecastData';
 
@@ -11,6 +11,14 @@ import ForecastData from './ForecastData';
 export default function Forecast(props) {
   let [forecastReady, setForecastReady] = useState(false);
   let [forecast, setForecast] = useState(null);
+
+
+    useEffect (() => {
+      setForecastReady(false);
+
+    }, [props.latlon]);
+
+
 
   function handleResponse(response) {
  
@@ -26,7 +34,7 @@ export default function Forecast(props) {
       <div className='forecast-box'>
       <div className='next d-flex justify-content-start'>Next 7 days </div>
           {forecast.map(function(nextDays, index) {
-            if (index < 6){
+            if (index < 7){
               return (
                 <div key={index}>
                 <ForecastData data={nextDays}/>
@@ -34,7 +42,7 @@ export default function Forecast(props) {
               );
             }
           })}
-          <ForecastData data={forecast[0]} />
+          
                 </div>
                 );
      
@@ -58,7 +66,7 @@ export default function Forecast(props) {
     
     
      }
-}
+    }
     
   
 
