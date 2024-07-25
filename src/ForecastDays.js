@@ -40,6 +40,8 @@ export default function Forecast(props) {
                 <ForecastData data={nextDays}/>
                   </div>
               );
+            } else {
+              return null;
             }
           })}
           

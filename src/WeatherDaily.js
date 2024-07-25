@@ -53,8 +53,8 @@ export default function Weather(props) {
                     <i className='fa-solid fa-location-dot'></i>
                           <div className='local'>{city}</div>
                           </div>
-                          <form className='search-bar mt-3 pt-2' onSubmit={handleSubmit} id="search-form">
-                            <input className="position-absolute top-10 start-50 translate-middle" type='search' placeholder='Enter a location...' autoFocus="on" onChange={handleCityChange} />
+                          <form className='search-bar mt-3 pt-2' onSubmit={handleSubmit} id="search-form" action="submit">
+                            <input className="position-absolute top-10 start-50 translate-middle" type='search' placeholder='Enter a location...' autoFocus="on" onChange={handleCityChange} id="search-input" required minLength="3" />
 
 
                        <button type="submit" className="btn" value="Search"><i className='fa-solid fa-magnifying-glass text-light text-opacity-90'></i></button>

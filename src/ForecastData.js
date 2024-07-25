@@ -23,7 +23,7 @@ function maxTemp(){
   }
 
         return (
-            <div forecastsection>
+            <div>
             <div className='box-rows row row-cols-2'>
           <div className='day-one col'>
             
